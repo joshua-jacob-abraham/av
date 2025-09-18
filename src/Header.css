@@ -1,0 +1,92 @@
+.header {
+  padding: 5px;
+  background-color: white;
+  border-bottom: 0.5px solid red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+
+.logo {
+  padding-left: 10px;
+  color: rgb(235, 1, 1);
+  margin: 0.6rem;
+}
+
+.expand {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 1px;
+  background: red;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.vertical {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.expand.open .vertical {
+  animation: spinToCrossVertical 0.8s ease-in-out forwards;
+}
+
+.expand.open .horizontal {
+  animation: spinToCrossHorizontal 0.8s ease-in-out forwards;
+}
+
+.expand.closing .vertical {
+  animation: spinBackVertical 0.8s ease-in-out forwards;
+}
+
+.expand.closing .horizontal {
+  animation: spinBackHorizontal 0.8s ease-in-out forwards;
+}
+
+@keyframes spinToCrossVertical {
+  from {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(225deg);
+  }
+}
+
+@keyframes spinToCrossHorizontal {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+}
+
+@keyframes spinBackVertical {
+  from {
+    transform: translate(-50%, -50%) rotate(225deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+@keyframes spinBackHorizontal {
+  from {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
