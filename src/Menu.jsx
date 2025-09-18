@@ -1,5 +1,5 @@
 import { useState } from "react";
-import rootMenu from "./data/rootmenu";
+import rootMenu from "./data/rootMenu.js";
 import "./Menu.css";
 import arrowSvg from "./assets/arrow.svg";
 
